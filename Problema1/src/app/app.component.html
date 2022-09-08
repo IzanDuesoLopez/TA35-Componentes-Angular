@@ -1,0 +1,56 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<router-outlet></router-outlet>
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+    </div>
+
+    <div class="col-5">
+      <h1 class="izquierda">Alta cliente</h1>
+
+      <form>
+        <div class="mb-3 izquierda">
+          <label for="nombre" class="form-label">Nombre: </label>
+          <input type="text" class="form-control" id="nombreuser" #nombreuser>
+        </div>
+        <div class="mb-3 izquierda">
+          <label for="cif" class="form-label">CIF: </label>
+          <input type="text" class="form-control" id="cifInput" #cifuser>
+        </div>
+        <div class="mb-3 izquierda">
+          <label for="direccion" class="form-label">Dirección: </label>
+          <input type="text" class="form-control" id="direccionInput" #diruser>
+        </div>
+        <div class="mb-3 izquierda">
+          <label for="seleccion" class="form-label">Grupo</label>
+          <select id="select1" class="form-select" #grupouser>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </div>
+        <div class="izquierda">
+          <button (click)="addValues(nombreuser.value, cifuser.value, diruser.value, grupouser.value)" type="button" class="btn btn-primary">Guardar</button>
+        </div>
+      </form>
+
+      <h2 class="izquierda mt-5">Listado de clientes</h2>
+      <div class="izquierda">
+        <app-listado [datos]="articulos"></app-listado>
+      </div>
+
+    </div>
+
+    <div class="col">
+    </div>
+  </div>
+</div>
+

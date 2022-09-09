@@ -1,0 +1,44 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<router-outlet></router-outlet>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+
+    </div>
+    <div class="col-6">
+      <h1>Formulario de contacto</h1>
+      <form>
+        <div class="mb-3 izq">
+          <label for="nombre" class="form-label">Nombre: </label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre y apellido" #nom>
+        </div>
+        <div class="mb-3 izq">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="ejemplo@dominio.com" #ema>
+        </div>
+        <div class="mb-3 izq">
+          <label for="mensaje" class="form-label">Mensaje:</label>
+          <textarea class="form-control" id="mensaje" rows="4" #mens></textarea>
+        </div>
+        <div class="mb-3 izq">
+          <label for="nombre" class="form-label">{{respuesta}}</label>
+          <input type="text" class="form-control" id="textRespuesta" aria-describedby="textRespuesta" placeholder="Respuesta" #res>
+        </div>
+        <div class="izq mb-3">
+          <button (click)="comprobar(res.value)" type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+      </form>
+      <app-listar nombre={{nom.value}} email={{ema.value}}  mensaje={{mens.value}} respuesta={{res.value}}></app-listar>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+</div>
